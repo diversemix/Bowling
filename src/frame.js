@@ -4,5 +4,25 @@
  *  - manage the pins.
  */
 
-export default Frame = {
+export default class Frame {
+
+    frameScore = []
+
+    roll(pins) {
+        this.frameScore.push(pins);
+    }
+
+    isFinished() {
+        return isStrike() || this.frameScore.length === 2
+    }
+
+    isStrike() {
+        return this.frameScore.length === 1 && this.frameScore[0] === 10
+    }
+
+    isSpare() {
+        return this.frameScore.length === 2 && this.frameScore.reduce((l, r) => l + r) === 10
+    }    
+
+
 };
