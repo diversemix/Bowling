@@ -1,4 +1,3 @@
-import CreateGame from './game.js';
-//const CreateGame = require('game');
+import Game from './game.js';
 
-CreateGame();
+const game = new Game();
